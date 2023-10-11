@@ -7,7 +7,7 @@ The main change is to use ```Dict``` instead of ```dict``` types, as the latter 
 
 This is used in [Domoticz plugin project](https://github.com/RandomOutcome/Domoticz-Tapo-P100-Plugin) to support the new TP-Link TAPO communication protocol firmware rolled out to P100 plugs in 2023.
 
-# How to install Python v3.8 / v3.9 version
+# How to install the Python v3.8 / v3.9 version
 Not yet published to PyPI (will be ```pip install plugp100-3.9```) 
 
 *Temporary method - a bit of a hack:*
