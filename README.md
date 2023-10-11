@@ -3,7 +3,7 @@ This is a fork of work of [@petretiandrea](https://github.com/petretiandrea/plug
 
 The purpose of this fork is to provide a version of the library that is backported to work with python v3.8 and v3.9, as a PyPi package.
 
-The main change is to use ```Dict``` instead of ```dict``` types, as the latter is only handled for the custom types involved from python v3.10 onwards, also implemenst explicit castings requried.
+The main change is to use ```Dict``` instead of ```dict``` types, as the latter is only handled for the custom types involved from python v3.10 onwards, also implements explicit castings requried.
 
 This is used in [Domoticz plugin project](https://github.com/RandomOutcome/Domoticz-Tapo-P100-Plugin) to support the new TP-Link TAPO communication protocol firmware rolled out to P100 plugs in 2023.
 
