@@ -1,5 +1,5 @@
 # Plug P100
-This is a fork of work of [petretiandrea](https://github.com/petretiandrea/plugp100), which in turn is a fork of [@K4CZP3R](https://github.com/K4CZP3R/tapo-p100-python) original work.
+This is a fork of work of [@petretiandrea](https://github.com/petretiandrea/plugp100), which in turn is a fork of [@K4CZP3R](https://github.com/K4CZP3R/tapo-p100-python) original work.
 
 The purpose of this fork is to provide a version of the library that is backported to work with python v3.8 and v3.9, as a PyPi package.
 
