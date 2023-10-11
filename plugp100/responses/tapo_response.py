@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import TypeVar, Generic, Optional, Any
+from typing import TypeVar, Generic, Optional, Any, Dict
 
 from plugp100.common.functional.tri import Try, Failure, Success
 from plugp100.common.utils.json_utils import Json
@@ -15,7 +15,7 @@ class TapoResponse(Generic[T]):
     msg: Optional[str]
 
     @staticmethod
-    def try_from_json(json: dict[str, Any]) -> Try["TapoResponse[Json]"]:
+    def try_from_json(json: Dict[str, Any]) -> Try["TapoResponse[Json]"]:
         response = TapoResponse(
             json.get("error_code", -1),
             json.get("result", {}),

@@ -1,7 +1,7 @@
 import dataclasses
-from typing import Any
+from typing import Any, Dict
 
-Json = dict[str, Any]
+Json = Dict[str, Any] 
 
 
 def dataclass_encode_json(obj):

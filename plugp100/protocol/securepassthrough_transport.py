@@ -4,7 +4,7 @@ import time
 import uuid
 from dataclasses import dataclass
 from hashlib import md5
-from typing import Optional, Any
+from typing import Optional, Any, Dict
 
 import jsons
 
@@ -31,7 +31,7 @@ class Session:
     terminal_uuid: str
     _handshake_invalid: bool = False
 
-    def get_cookies(self) -> dict[str, Any]:
+    def get_cookies(self) -> Dict[str, Any]:
         return {"TP_SESSIONID": self.session_id}
 
     def is_handshake_session_expired(self) -> bool:

@@ -1,6 +1,6 @@
 import dataclasses
 from datetime import datetime
-from typing import Any
+from typing import Any, Dict
 
 from plugp100.common.functional.tri import Try
 
@@ -19,7 +19,7 @@ class TimeInfo:
         return datetime.fromtimestamp(self.timestamp, tz=ZoneInfo(self.region))
 
     @staticmethod
-    def try_from_json(kwargs: dict[str, Any]) -> Try["TimeInfo"]:
+    def try_from_json(kwargs: Dict[str, Any]) -> Try["TimeInfo"]:
         return Try.of(
             lambda: TimeInfo(
                 time_diff=kwargs.get("time_diff"),

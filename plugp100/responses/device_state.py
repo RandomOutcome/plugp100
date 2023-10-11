@@ -25,7 +25,7 @@ class PlugDeviceState(DeviceState):
     auto_off_time_remaining: int
 
     @staticmethod
-    def try_from_json(kwargs: dict[str, Any]) -> Try["PlugDeviceState"]:
+    def try_from_json(kwargs: Dict[str, Any]) -> Try["PlugDeviceState"]:
         return Try.of(
             lambda: PlugDeviceState(
                 info=DeviceInfo(**kwargs),
@@ -49,7 +49,7 @@ class LightDeviceState(DeviceState):
     color_temp: Optional[int]
 
     @staticmethod
-    def try_from_json(kwargs: dict[str, Any]) -> Try["LightDeviceState"]:
+    def try_from_json(kwargs: Dict[str, Any]) -> Try["LightDeviceState"]:
         return Try.of(
             lambda: LightDeviceState(
                 info=DeviceInfo(**kwargs),
@@ -73,7 +73,7 @@ class LedStripDeviceState(DeviceState):
     lighting_effect: Optional[LightEffect]
 
     @staticmethod
-    def try_from_json(kwargs: dict[str, Any]) -> Try["LedStripDeviceState"]:
+    def try_from_json(kwargs: Dict[str, Any]) -> Try["LedStripDeviceState"]:
         return Try.of(
             lambda: LedStripDeviceState(
                 info=DeviceInfo(**kwargs),
@@ -158,7 +158,7 @@ class HubDeviceState(DeviceState):
     in_alarm: bool
 
     @staticmethod
-    def try_from_json(kwargs: dict[str, Any]) -> Try["HubDeviceState"]:
+    def try_from_json(kwargs: Dict[str, Any]) -> Try["HubDeviceState"]:
         return Try.of(
             lambda: HubDeviceState(
                 info=DeviceInfo(**kwargs),

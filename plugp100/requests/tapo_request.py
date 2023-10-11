@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import TypeVar, Any, List
+from typing import TypeVar, Any, List, Dict
 
 from plugp100.api.light_effect import LightEffect
 from plugp100.common.credentials import AuthCredential
@@ -7,6 +7,7 @@ from plugp100.requests.handshake_params import HandshakeParams
 from plugp100.requests.login_device import LoginDeviceParams, LoginDeviceParamsV2
 from plugp100.requests.secure_passthrough_params import SecurePassthroughParams
 from plugp100.requests.trigger_logs_params import GetTriggerLogsParams
+
 
 T = TypeVar("T")
 
@@ -42,7 +43,7 @@ class TapoRequest(object):
         return TapoRequest(method="get_energy_usage", params=None)
 
     @staticmethod
-    def set_device_info(params: dict[str, Any]):
+    def set_device_info(params: Dict[str, Any]):
         return TapoRequest(method="set_device_info", params=params)
 
     @staticmethod

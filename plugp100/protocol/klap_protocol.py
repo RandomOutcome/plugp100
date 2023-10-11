@@ -3,7 +3,7 @@ import hashlib
 import logging
 import secrets
 import time
-from typing import Any, Optional, Tuple, Union
+from typing import Any, Optional, Tuple, Union, Dict
 
 import aiohttp
 import jsons
@@ -44,7 +44,7 @@ class KlapProtocol(TapoProtocol):
 
     async def send_request(
         self, request: TapoRequest, retry: int = 3
-    ) -> Try[TapoResponse[dict[str, Any]]]:
+    ) -> Try[TapoResponse[Dict[str, Any]]]:
         response = await self._send_request(request, retry)
         if response.is_failure() and retry > 0:
             return await self.send_request(request, retry - 1)
@@ -53,7 +53,7 @@ class KlapProtocol(TapoProtocol):
 
     async def _send_request(
         self, request: TapoRequest, retry: int = 1
-    ) -> Try[TapoResponse[dict[str, Any]]]:
+    ) -> Try[TapoResponse[Dict[str, Any]]]:
         if self._klap_session is None or not self._klap_session.handshake_complete:
             new_session = await self.perform_handshake()
             if new_session.is_success():
@@ -271,7 +271,7 @@ class KlapSession:
     expire_at: float
     handshake_complete: bool
 
-    def get_cookies(self) -> dict[str, Any]:
+    def get_cookies(self) -> Dict[str, Any]:
         return {"TP_SESSIONID": self.session_id}
 
     def is_handshake_session_expired(self) -> bool:

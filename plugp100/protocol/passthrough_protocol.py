@@ -1,6 +1,6 @@
 import logging
 from time import time
-from typing import Optional, Any
+from typing import Optional, Any, Dict
 
 import aiohttp
 
@@ -38,7 +38,7 @@ class PassthroughProtocol(TapoProtocol):
 
     async def send_request(
         self, request: TapoRequest, retry: int = 3
-    ) -> Try[TapoResponse[dict[str, Any]]]:
+    ) -> Try[TapoResponse[Dict[str, Any]]]:
         response = await self._send_request(request)
         if retry > 0 and isinstance(response.error(), TapoException):
             if response.error().error_code == TapoError.ERR_SESSION_TIMEOUT.value:
@@ -57,7 +57,7 @@ class PassthroughProtocol(TapoProtocol):
 
     async def _send_request(
         self, request: TapoRequest
-    ) -> Try[TapoResponse[dict[str, Any]]]:
+    ) -> Try[TapoResponse[Dict[str, Any]]]:
         login_session = (
             await self._login_with_version(self._credential)
             if self._session is None or self._session.token is None

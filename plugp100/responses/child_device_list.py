@@ -1,13 +1,13 @@
 import base64
 from dataclasses import dataclass
-from typing import Any, Set, Callable, List, TypeVar
+from typing import Any, Set, Callable, List, TypeVar, Dict
 
 Child = TypeVar("Child")
 
 
 @dataclass
 class ChildDeviceList(object):
-    child_device_list: list[dict[str, Any]]
+    child_device_list: List[Dict[str, Any]]
     start_index: int
     sum: int
 
@@ -34,7 +34,7 @@ class ChildDeviceList(object):
             and model_like.lower() in child.get("model", "").lower()
         }
 
-    def get_children(self, parse: Callable[[dict[str, Any]], Child]) -> List[Child]:
+    def get_children(self, parse: Callable[[Dict[str, Any]], Child]) -> List[Child]:
         return list(map(lambda x: parse(x), self.child_device_list))
 
 

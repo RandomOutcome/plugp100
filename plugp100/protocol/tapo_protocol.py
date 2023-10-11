@@ -1,5 +1,5 @@
 import abc
-from typing import Optional, Any
+from typing import Optional, Any, Dict
 
 from plugp100.common.functional.tri import Try
 from plugp100.requests.tapo_request import TapoRequest
@@ -18,7 +18,7 @@ class TapoProtocol(abc.ABC):
     @abc.abstractmethod
     async def send_request(
         self, request: TapoRequest, retry: int = 3
-    ) -> Try[TapoResponse[dict[str, Any]]]:
+    ) -> Try[TapoResponse[Dict[str, Any]]]:
         pass
 
     @abc.abstractmethod

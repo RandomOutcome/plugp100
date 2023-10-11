@@ -23,7 +23,7 @@ class DeviceUsageInfo:
     saved_power: Usage
 
     @staticmethod
-    def try_from_json(kwargs: dict[str, Any]) -> Try["DeviceUsageInfo"]:
+    def try_from_json(kwargs: Dict[str, Any]) -> Try["DeviceUsageInfo"]:
         return Try.of(
             lambda: DeviceUsageInfo(
                 time_usage=Usage(kwargs.get("time_usage", {})),
