@@ -5,7 +5,7 @@ The purpose of this fork is to provide a version of the library that is backport
 
 The main change is to use ```Dict``` instead of ```dict``` types, as the latter is only handled for the custom types involved from python v3.10 onwards, and implement explicit castings requried.
 
-This is used in *** Domoticz plugin project to support the new TP-Link TAPO communication protocol firmware rolled out to P100 plugs in 2023.
+This is used in [Domoticz plugin project](https://github.com/RandomOutcome/Domoticz-Tapo-P100-Plugin) to support the new TP-Link TAPO communication protocol firmware rolled out to P100 plugs in 2023.
 
 # How to install
 Not yet published to PyPI (will be ```pip install plugp100-3.9```)  
