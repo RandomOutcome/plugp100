@@ -11,11 +11,11 @@ This is used in [Domoticz plugin project](https://github.com/RandomOutcome/Domot
 Not yet published to PyPI (will be ```pip install plugp100-3.9```) 
 
 *Temporary method - a bit of a hack:*
-*- Install [plugp100](https://github.com/petretiandrea/plugp100) as the non-root user follow instructions in the link but use --user with pip install*
-*- This resolves dependencies and installs a baseline version of plugp100 into the PyPi site-packages directory*
-*- Download zip file of [Domoticz plugin project](https://github.com/RandomOutcome/Domoticz-Tapo-P100-Plugin) and unzip to a temporary location (e.g. /tmp/)*
-*- Copy (best using cp -a) the contents of /tmp/plugp100/ into /home/[user]/.local/lib/python3.**x**/site-packages/plugp100/, where **x** is 8 or 9 depending on python version used* 
-   **Location varies by OS used so best to check where plugp100 was installed first**     
+- Install [plugp100](https://github.com/petretiandrea/plugp100) as the non-root user follow instructions in the link but use --user with pip install
+- This resolves dependencies and installs a baseline version of plugp100 into the PyPi site-packages directory
+- Download zip file of [Domoticz plugin project](https://github.com/RandomOutcome/Domoticz-Tapo-P100-Plugin) and unzip to a temporary location (e.g. /tmp/)
+- Copy (best using cp -a) the contents of /tmp/plugp100/ into /home/[user]/.local/lib/python3.**x**/site-packages/plugp100/, where **x** is 8 or 9 depending on python version used 
+**Location varies by OS used so best to check where plugp100 was installed first**     
 
 # Code example
 
